@@ -1,6 +1,8 @@
 package com.jetbrains.gettext.parser;
 
+import org.jetbrains.annotations.NotNull;
 import com.intellij.lang.ASTNode;
+import com.intellij.lang.LanguageVersion;
 import com.intellij.lang.PsiBuilder;
 import com.intellij.lang.PsiParser;
 import com.intellij.psi.tree.IElementType;
@@ -8,7 +10,6 @@ import com.jetbrains.gettext.GetTextCompositeElementTypes;
 import com.jetbrains.gettext.GetTextTokenTypes;
 import com.jetbrains.gettext.lang.MsgCommandContainer;
 import com.jetbrains.gettext.lang.UnknownCommandException;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * @author Svetlana.Zemlyanskaya
@@ -16,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 public class GetTextParser implements PsiParser {
   @NotNull
   @Override
-  public ASTNode parse(IElementType root, PsiBuilder builder) {
+  public ASTNode parse(IElementType root, PsiBuilder builder, LanguageVersion languageVersion) {
     builder.setDebugMode(true);
     final PsiBuilder.Marker marker = builder.mark();
     while (!builder.eof()) {

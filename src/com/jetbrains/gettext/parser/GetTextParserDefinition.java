@@ -1,6 +1,8 @@
 package com.jetbrains.gettext.parser;
 
+import org.jetbrains.annotations.NotNull;
 import com.intellij.lang.ASTNode;
+import com.intellij.lang.LanguageVersion;
 import com.intellij.lang.ParserDefinition;
 import com.intellij.lang.PsiParser;
 import com.intellij.lexer.Lexer;
@@ -12,8 +14,11 @@ import com.intellij.psi.tree.IElementType;
 import com.intellij.psi.tree.IFileElementType;
 import com.intellij.psi.tree.IStubFileElementType;
 import com.intellij.psi.tree.TokenSet;
-import com.jetbrains.gettext.*;
-import org.jetbrains.annotations.NotNull;
+import com.jetbrains.gettext.GetTextCompositeElementType;
+import com.jetbrains.gettext.GetTextFile;
+import com.jetbrains.gettext.GetTextLanguage;
+import com.jetbrains.gettext.GetTextLexer;
+import com.jetbrains.gettext.GetTextTokenTypes;
 
 /**
  * @author Svetlana.Zemlyanskaya
@@ -23,11 +28,11 @@ public class GetTextParserDefinition implements ParserDefinition {
   private static final TokenSet COMMENT = TokenSet.create(GetTextTokenTypes.COMMENT, GetTextTokenTypes.COMMENT_SYMBOLS);
 
   @NotNull
-  public Lexer createLexer(Project project) {
+  public Lexer createLexer(Project project, LanguageVersion languageVersion) {
     return new GetTextLexer();
   }
 
-  public PsiParser createParser(Project project) {
+  public PsiParser createParser(Project project, LanguageVersion languageVersion) {
     return new GetTextParser();
   }
 
@@ -36,17 +41,17 @@ public class GetTextParserDefinition implements ParserDefinition {
   }
 
   @NotNull
-  public TokenSet getWhitespaceTokens() {
+  public TokenSet getWhitespaceTokens(LanguageVersion languageVersion) {
     return WHITE_SPACE;
   }
 
   @NotNull
-  public TokenSet getCommentTokens() {
+  public TokenSet getCommentTokens(LanguageVersion languageVersion) {
     return COMMENT;
   }
 
   @NotNull
-  public TokenSet getStringLiteralElements() {
+  public TokenSet getStringLiteralElements(LanguageVersion languageVersion) {
     return GetTextTokenTypes.STRING_LITERALS;
   }
 
@@ -65,11 +70,6 @@ public class GetTextParserDefinition implements ParserDefinition {
 
   public SpaceRequirements spaceExistanceTypeBetweenTokens(ASTNode left, ASTNode right) {
     return SpaceRequirements.MAY;
-  }
-
-  @Override
-  public String toString() {
-    return "GetTextParserDefinition";
   }
 }
 
