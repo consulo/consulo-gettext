@@ -2,11 +2,9 @@ package com.jetbrains.gettext.parser;
 
 import org.jetbrains.annotations.NotNull;
 import com.intellij.lang.ASTNode;
-import com.intellij.lang.LanguageVersion;
 import com.intellij.lang.ParserDefinition;
 import com.intellij.lang.PsiParser;
 import com.intellij.lexer.Lexer;
-import com.intellij.openapi.project.Project;
 import com.intellij.psi.FileViewProvider;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
@@ -19,6 +17,7 @@ import com.jetbrains.gettext.GetTextFile;
 import com.jetbrains.gettext.GetTextLanguage;
 import com.jetbrains.gettext.GetTextLexer;
 import com.jetbrains.gettext.GetTextTokenTypes;
+import consulo.lang.LanguageVersion;
 
 /**
  * @author Svetlana.Zemlyanskaya
@@ -28,11 +27,11 @@ public class GetTextParserDefinition implements ParserDefinition {
   private static final TokenSet COMMENT = TokenSet.create(GetTextTokenTypes.COMMENT, GetTextTokenTypes.COMMENT_SYMBOLS);
 
   @NotNull
-  public Lexer createLexer(Project project, LanguageVersion languageVersion) {
+  public Lexer createLexer(LanguageVersion languageVersion) {
     return new GetTextLexer();
   }
 
-  public PsiParser createParser(Project project, LanguageVersion languageVersion) {
+  public PsiParser createParser(LanguageVersion languageVersion) {
     return new GetTextParser();
   }
 

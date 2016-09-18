@@ -2,10 +2,11 @@
   <artifact build-on-make="true" name="dist">
     <output-path>$PROJECT_DIR$/out/artifacts/dist</output-path>
     <root id="root">
-      <element id="directory" name="gettext">
+      <element id="directory" name="com.jetbrains.gettext">
         <element id="directory" name="lib">
           <element id="zip-archive" name="gettext.jar">
             <element id="module-output" name="consulo-gettext" />
+            <element id="module-production-resource-output" name="consulo-gettext" />
           </element>
         </element>
       </element>
