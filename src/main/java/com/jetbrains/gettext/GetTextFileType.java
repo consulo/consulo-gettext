@@ -1,9 +1,9 @@
 package com.jetbrains.gettext;
 
-import com.intellij.openapi.fileTypes.LanguageFileType;
 import javax.annotation.Nonnull;
 
-import javax.swing.*;
+import com.intellij.openapi.fileTypes.LanguageFileType;
+import consulo.ui.image.Image;
 
 /**
  * @author Svetlana.Zemlyanskaya
@@ -16,7 +16,7 @@ public class GetTextFileType  extends LanguageFileType {
   }
 
   @Nonnull
-  public String getName() {
+  public String getId() {
     return "GetText";
   }
 
@@ -31,7 +31,7 @@ public class GetTextFileType  extends LanguageFileType {
   }
 
   @Override
-  public Icon getIcon() {
+  public Image getIcon() {
     return GetTextIcons.FILETYPE_ICON;
   }
 }
