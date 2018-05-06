@@ -3,7 +3,7 @@ package com.jetbrains.gettext;
 import com.intellij.extapi.psi.PsiFileBase;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.psi.FileViewProvider;
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
 
 /**
  * @author Svetlana.Zemlyanskaya
@@ -13,7 +13,7 @@ public class GetTextFile extends PsiFileBase {
     super(viewProvider, GetTextLanguage.INSTANCE);
   }
 
-  @NotNull
+  @Nonnull
   public FileType getFileType() {
     return GetTextFileType.INSTANCE;
   }

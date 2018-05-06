@@ -1,18 +1,19 @@
 package com.jetbrains.gettext;
 
+import javax.annotation.Nonnull;
+
 import com.intellij.lang.ASTNode;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.source.tree.CompositeElement;
 import com.intellij.psi.tree.ICompositeElementType;
 import com.intellij.psi.tree.IElementType;
 import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * @author Svetlana.Zemlyanskaya
  */
 public class GetTextCompositeElementType extends IElementType implements ICompositeElementType {
-  public GetTextCompositeElementType(@NotNull @NonNls final String debugName) {
+  public GetTextCompositeElementType(@Nonnull @NonNls final String debugName) {
     super(debugName, GetTextLanguage.INSTANCE);
   }
 
@@ -20,7 +21,7 @@ public class GetTextCompositeElementType extends IElementType implements ICompos
     return new GetTextCompositeElement(node);
   }
 
-  @NotNull
+  @Nonnull
   public ASTNode createCompositeNode() {
     return new CompositeElement(this);
   }

@@ -6,7 +6,7 @@ import com.intellij.openapi.fileTypes.SyntaxHighlighterBase;
 import com.intellij.psi.tree.IElementType;
 import com.jetbrains.gettext.GetTextLexer;
 import com.jetbrains.gettext.GetTextTokenTypes;
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,7 +20,7 @@ public class GetTextSyntaxHighlighter extends SyntaxHighlighterBase {
   public GetTextSyntaxHighlighter() {
   }
 
-  @NotNull
+  @Nonnull
   public Lexer getHighlightingLexer() {
     return new GetTextLexer();
   }
@@ -39,7 +39,7 @@ public class GetTextSyntaxHighlighter extends SyntaxHighlighterBase {
 
   }
 
-  @NotNull
+  @Nonnull
   public TextAttributesKey[] getTokenHighlights(IElementType tokenType) {
     return pack(keys1.get(tokenType));
   }

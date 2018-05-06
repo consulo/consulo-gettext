@@ -1,6 +1,7 @@
 package com.jetbrains.gettext.parser;
 
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
+
 import com.intellij.lang.ASTNode;
 import com.intellij.lang.ParserDefinition;
 import com.intellij.lang.PsiParser;
@@ -26,7 +27,7 @@ public class GetTextParserDefinition implements ParserDefinition {
   private static final TokenSet WHITE_SPACE = TokenSet.create(GetTextTokenTypes.WHITE_SPACE);
   private static final TokenSet COMMENT = TokenSet.create(GetTextTokenTypes.COMMENT, GetTextTokenTypes.COMMENT_SYMBOLS);
 
-  @NotNull
+  @Nonnull
   public Lexer createLexer(LanguageVersion languageVersion) {
     return new GetTextLexer();
   }
@@ -39,22 +40,22 @@ public class GetTextParserDefinition implements ParserDefinition {
     return new IStubFileElementType(GetTextLanguage.INSTANCE);
   }
 
-  @NotNull
+  @Nonnull
   public TokenSet getWhitespaceTokens(LanguageVersion languageVersion) {
     return WHITE_SPACE;
   }
 
-  @NotNull
+  @Nonnull
   public TokenSet getCommentTokens(LanguageVersion languageVersion) {
     return COMMENT;
   }
 
-  @NotNull
+  @Nonnull
   public TokenSet getStringLiteralElements(LanguageVersion languageVersion) {
     return GetTextTokenTypes.STRING_LITERALS;
   }
 
-  @NotNull
+  @Nonnull
   public PsiElement createElement(ASTNode node) {
     final IElementType type = node.getElementType();
     if (type instanceof GetTextCompositeElementType) {

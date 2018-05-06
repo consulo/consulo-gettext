@@ -1,7 +1,7 @@
 package com.jetbrains.gettext;
 
 import com.intellij.openapi.fileTypes.LanguageFileType;
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
 
 import javax.swing.*;
 
@@ -15,17 +15,17 @@ public class GetTextFileType  extends LanguageFileType {
     super(GetTextLanguage.INSTANCE);
   }
 
-  @NotNull
+  @Nonnull
   public String getName() {
     return "GetText";
   }
 
-  @NotNull
+  @Nonnull
   public String getDescription() {
     return "GNU GetText";
   }
 
-  @NotNull
+  @Nonnull
   public String getDefaultExtension() {
     return "po";
   }
