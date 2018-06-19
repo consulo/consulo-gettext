@@ -1,12 +1,12 @@
 package com.jetbrains.gettext;
 
+import java.io.File;
+import java.io.IOException;
+
 import com.intellij.lexer.Lexer;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.testFramework.UsefulTestCase;
-
-import java.io.File;
-import java.io.IOException;
 
 /**
  * @author Svetlana.Zemlyanskaya
@@ -35,7 +35,7 @@ public class GetTextLexerTest extends UsefulTestCase {
   }
 
   private static void doTest(String fileName) throws IOException {
-    final Lexer lexer = new GetTextLexer();
+    final Lexer lexer = new _GetTextLexer();
     final String testText = getFileText(GetTextUtils.getFullSourcePath(fileName));
     final String expected = GetTextUtils.getFullLexerPath(fileName);
     doFileLexerTest(lexer, testText, expected);

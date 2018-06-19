@@ -1,24 +1,17 @@
 package com.jetbrains.gettext;
 
-import com.intellij.lexer.FlexLexer;
+import com.intellij.lexer.LexerBase;
 import com.intellij.psi.tree.IElementType;
 import com.jetbrains.gettext.GetTextTokenTypes;
 import com.jetbrains.gettext.GetTextElementType;
 
 %%
 
-%{
-
-  public _GetTextLexer() {
-    this((java.io.Reader)null);
-  }
-
-%}
-
+%public
 %class _GetTextLexer
-%implements FlexLexer
+%extends LexerBase
 %unicode
-%function advance
+%function advanceImpl
 %type IElementType
 %eof{  return;
 %eof}

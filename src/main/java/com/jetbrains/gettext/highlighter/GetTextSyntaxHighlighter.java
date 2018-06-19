@@ -1,15 +1,16 @@
 package com.jetbrains.gettext.highlighter;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.annotation.Nonnull;
+
 import com.intellij.lexer.Lexer;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.fileTypes.SyntaxHighlighterBase;
 import com.intellij.psi.tree.IElementType;
-import com.jetbrains.gettext.GetTextLexer;
 import com.jetbrains.gettext.GetTextTokenTypes;
-import javax.annotation.Nonnull;
-
-import java.util.HashMap;
-import java.util.Map;
+import com.jetbrains.gettext._GetTextLexer;
 
 /**
  * @author Svetlana.Zemlyanskaya
@@ -22,7 +23,7 @@ public class GetTextSyntaxHighlighter extends SyntaxHighlighterBase {
 
   @Nonnull
   public Lexer getHighlightingLexer() {
-    return new GetTextLexer();
+    return new _GetTextLexer();
   }
 
   static {

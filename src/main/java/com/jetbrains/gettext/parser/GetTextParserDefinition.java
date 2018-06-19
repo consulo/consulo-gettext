@@ -16,8 +16,8 @@ import com.intellij.psi.tree.TokenSet;
 import com.jetbrains.gettext.GetTextCompositeElementType;
 import com.jetbrains.gettext.GetTextFile;
 import com.jetbrains.gettext.GetTextLanguage;
-import com.jetbrains.gettext.GetTextLexer;
 import com.jetbrains.gettext.GetTextTokenTypes;
+import com.jetbrains.gettext._GetTextLexer;
 import consulo.lang.LanguageVersion;
 
 /**
@@ -29,7 +29,7 @@ public class GetTextParserDefinition implements ParserDefinition {
 
   @Nonnull
   public Lexer createLexer(LanguageVersion languageVersion) {
-    return new GetTextLexer();
+    return new _GetTextLexer();
   }
 
   public PsiParser createParser(LanguageVersion languageVersion) {
