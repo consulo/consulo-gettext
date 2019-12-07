@@ -1,12 +1,10 @@
 package com.jetbrains.gettext;
 
-import com.intellij.openapi.application.PathManager;
-
 /**
  * @author Svetlana.Zemlyanskaya
  */
 public class GetTextUtils {
-  private static final String path = "community/plugins/gettext/test/com/jetbrains/gettext/";
+  private static final String path = "/com/jetbrains/gettext/";
 
   public static String[] getAllTestedFiles() {
     return new String[]{
@@ -23,7 +21,7 @@ public class GetTextUtils {
   }
 
   private static String getFullPath() {
-    return PathManager.getHomePath() + "/" + path;
+    return path;
   }
 
   public static String getFullSourcePath(final String fileName) {

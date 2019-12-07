@@ -1,4 +1,4 @@
-<idea-plugin>
+<consulo-plugin>
 	<id>com.jetbrains.gettext</id>
 	<name>GetText</name>
 	<description>GNU GetText language support</description>
@@ -15,4 +15,4 @@
 		<lang.braceMatcher language="GetText" implementationClass="com.jetbrains.gettext.completion.GetTextBraceMatcher"/>
 		<completion.contributor language="GetText" implementationClass="com.jetbrains.gettext.completion.GetTextCompletionContributor"/>
 	</extensions>
-</idea-plugin>
+</consulo-plugin>
