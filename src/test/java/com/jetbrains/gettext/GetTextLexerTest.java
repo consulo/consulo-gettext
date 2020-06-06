@@ -1,17 +1,17 @@
 package com.jetbrains.gettext;
 
-import java.io.File;
-import java.io.IOException;
-
 import com.intellij.lexer.Lexer;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.psi.tree.IElementType;
 import com.intellij.testFramework.UsefulTestCase;
 
+import java.io.File;
+import java.io.IOException;
+
 /**
  * @author Svetlana.Zemlyanskaya
  */
-public class GetTextLexerTest extends UsefulTestCase {
+public abstract class GetTextLexerTest extends UsefulTestCase {
 
   private static void doFileLexerTest(Lexer lexer, String testText, String expected) {
     lexer.start(testText);
