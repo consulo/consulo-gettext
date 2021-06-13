@@ -2,9 +2,9 @@ package com.jetbrains.gettext.lang;
 
 import com.intellij.lang.PsiBuilder;
 import com.intellij.psi.tree.IElementType;
-import com.intellij.util.containers.hash.HashMap;
 import com.jetbrains.gettext.GetTextTokenTypes;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
