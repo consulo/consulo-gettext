@@ -2,9 +2,12 @@
 	<id>com.jetbrains.gettext</id>
 	<name>GetText</name>
 	<description>GNU GetText language support</description>
-	<category>Custom Language</category>
+	<category>Custom Languages</category>
 	<version>SNAPSHOT</version>
 	<vendor>JetBrains</vendor>
+	<tags>
+		<tag>custom.language</tag>
+	</tags>
 
 	<extensions defaultExtensionNs="com.intellij">
 		<fileTypeFactory implementation="com.jetbrains.gettext.GetTextFileTypeFactory"/>
