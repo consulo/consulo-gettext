@@ -1,9 +1,10 @@
 package com.jetbrains.gettext;
 
-import javax.annotation.Nonnull;
-
 import com.intellij.openapi.fileTypes.LanguageFileType;
+import consulo.localize.LocalizeValue;
 import consulo.ui.image.Image;
+
+import javax.annotation.Nonnull;
 
 /**
  * @author Svetlana.Zemlyanskaya
@@ -21,8 +22,8 @@ public class GetTextFileType  extends LanguageFileType {
   }
 
   @Nonnull
-  public String getDescription() {
-    return "GNU GetText";
+  public LocalizeValue getDescription() {
+    return LocalizeValue.localizeTODO("GNU GetText");
   }
 
   @Nonnull
