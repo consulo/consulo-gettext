@@ -1,24 +1,19 @@
 package com.jetbrains.gettext.completion;
 
-import static com.intellij.patterns.PlatformPatterns.psiElement;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.annotation.Nonnull;
-
-import com.intellij.codeInsight.completion.CompletionContributor;
-import com.intellij.codeInsight.completion.CompletionParameters;
-import com.intellij.codeInsight.completion.CompletionResultSet;
-import com.intellij.codeInsight.completion.CompletionType;
-import com.intellij.codeInsight.lookup.LookupElementBuilder;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiWhiteSpace;
-import com.intellij.util.ProcessingContext;
 import com.jetbrains.gettext.GetTextLanguage;
 import com.jetbrains.gettext.GetTextTokenTypes;
 import com.jetbrains.gettext.lang.GetTextFlags;
-import consulo.codeInsight.completion.CompletionProvider;
+import consulo.language.editor.completion.*;
+import consulo.language.editor.completion.lookup.LookupElementBuilder;
+import consulo.language.psi.PsiElement;
+import consulo.language.psi.PsiWhiteSpace;
+import consulo.language.util.ProcessingContext;
+
+import javax.annotation.Nonnull;
+import java.util.ArrayList;
+import java.util.List;
+
+import static consulo.language.pattern.PlatformPatterns.psiElement;
 
 /**
  * @author Svetlana.Zemlyanskaya

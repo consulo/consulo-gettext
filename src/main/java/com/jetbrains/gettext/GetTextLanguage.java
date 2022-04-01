@@ -1,7 +1,6 @@
 package com.jetbrains.gettext;
 
-
-import com.intellij.lang.Language;
+import consulo.language.Language;
 
 /**
  * @author Svetlana.Zemlyanskaya

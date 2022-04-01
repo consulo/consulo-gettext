@@ -9,7 +9,7 @@
 		<tag>custom.language</tag>
 	</tags>
 
-	<extensions defaultExtensionNs="com.intellij">
+	<extensions defaultExtensionNs="consulo">
 		<fileTypeFactory implementation="com.jetbrains.gettext.GetTextFileTypeFactory"/>
 		<syntaxHighlighter key="GetText" implementationClass="com.jetbrains.gettext.highlighter.GetTextSyntaxHighlighter"/>
 		<lang.parserDefinition language="GetText" implementationClass="com.jetbrains.gettext.parser.GetTextParserDefinition"/>

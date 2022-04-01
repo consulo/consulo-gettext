@@ -15,8 +15,8 @@
  */
 package com.jetbrains.gettext.completion;
 
-import com.intellij.codeInsight.editorActions.SimpleTokenSetQuoteHandler;
 import com.jetbrains.gettext.GetTextTokenTypes;
+import consulo.language.editor.action.SimpleTokenSetQuoteHandler;
 
 /**
  * @author Svetlana.Zemlyanskaya

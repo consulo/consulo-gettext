@@ -15,7 +15,7 @@
  */
 package com.jetbrains.gettext.completion;
 
-import com.intellij.lang.Commenter;
+import consulo.language.Commenter;
 
 /**
  * @author Svetlana.Zemlyanskaya

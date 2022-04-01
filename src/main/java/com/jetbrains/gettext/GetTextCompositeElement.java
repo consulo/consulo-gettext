@@ -1,8 +1,9 @@
 package com.jetbrains.gettext;
 
-import com.intellij.extapi.psi.ASTWrapperPsiElement;
-import com.intellij.lang.ASTNode;
-import com.intellij.lang.Language;
+import consulo.language.Language;
+import consulo.language.ast.ASTNode;
+import consulo.language.impl.psi.ASTWrapperPsiElement;
+
 import javax.annotation.Nonnull;
 
 /**
@@ -16,15 +17,5 @@ public class GetTextCompositeElement extends ASTWrapperPsiElement {
   @Nonnull
   public Language getLanguage() {
     return GetTextLanguage.INSTANCE;
-  }
-
-  @Nonnull
-  @SuppressWarnings({ "ConstantConditions", "EmptyMethod" })
-  public ASTNode getNode() {
-    return super.getNode();
-  }
-
-  public String toString() {
-    return getNode().getElementType().toString();
   }
 }
