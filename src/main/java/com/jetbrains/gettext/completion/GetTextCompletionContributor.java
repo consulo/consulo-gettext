@@ -3,6 +3,7 @@ package com.jetbrains.gettext.completion;
 import com.jetbrains.gettext.GetTextLanguage;
 import com.jetbrains.gettext.GetTextTokenTypes;
 import com.jetbrains.gettext.lang.GetTextFlags;
+import consulo.annotation.component.ExtensionImpl;
 import consulo.language.Language;
 import consulo.language.editor.completion.*;
 import consulo.language.editor.completion.lookup.LookupElementBuilder;
@@ -19,6 +20,7 @@ import static consulo.language.pattern.PlatformPatterns.psiElement;
 /**
  * @author Svetlana.Zemlyanskaya
  */
+@ExtensionImpl
 public class GetTextCompletionContributor extends CompletionContributor
 {
 	private final static String[] KEYWORDS = {
