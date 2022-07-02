@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * @author Svetlana.Zemlyanskaya
  */
-public class GetTextSyntaxHighlighter extends SyntaxHighlighterBase {
+public class GetTextSyntaxHighlighter extends SyntaxHighlighterBase  {
   private static final Map<IElementType, TextAttributesKey> keys1;
 
   public GetTextSyntaxHighlighter() {

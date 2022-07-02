@@ -15,30 +15,49 @@
  */
 package com.jetbrains.gettext.completion;
 
+import com.jetbrains.gettext.GetTextLanguage;
+import consulo.annotation.component.ExtensionImpl;
 import consulo.language.Commenter;
+import consulo.language.Language;
+
+import javax.annotation.Nonnull;
 
 /**
  * @author Svetlana.Zemlyanskaya
  */
-public class GetTextCommenter implements Commenter {
-  public String getLineCommentPrefix() {
-    return "# ";
-  }
+@ExtensionImpl
+public class GetTextCommenter implements Commenter
+{
+	public String getLineCommentPrefix()
+	{
+		return "# ";
+	}
 
-  public String getBlockCommentPrefix() {
-    return null;
-  }
+	public String getBlockCommentPrefix()
+	{
+		return null;
+	}
 
-  public String getBlockCommentSuffix() {
-    return null;
-  }
+	public String getBlockCommentSuffix()
+	{
+		return null;
+	}
 
-  public String getCommentedBlockCommentPrefix() {
-    return null;
-  }
+	public String getCommentedBlockCommentPrefix()
+	{
+		return null;
+	}
 
-  public String getCommentedBlockCommentSuffix() {
-    return null;
-  }
+	public String getCommentedBlockCommentSuffix()
+	{
+		return null;
+	}
+
+	@Nonnull
+	@Override
+	public Language getLanguage()
+	{
+		return GetTextLanguage.INSTANCE;
+	}
 }
 

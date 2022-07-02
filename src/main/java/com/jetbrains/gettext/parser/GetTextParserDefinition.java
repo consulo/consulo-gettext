@@ -1,6 +1,8 @@
 package com.jetbrains.gettext.parser;
 
 import com.jetbrains.gettext.*;
+import consulo.annotation.component.ExtensionImpl;
+import consulo.language.Language;
 import consulo.language.ast.ASTNode;
 import consulo.language.ast.IElementType;
 import consulo.language.ast.IFileElementType;
@@ -20,53 +22,76 @@ import javax.annotation.Nonnull;
 /**
  * @author Svetlana.Zemlyanskaya
  */
-public class GetTextParserDefinition implements ParserDefinition {
-  private static final TokenSet WHITE_SPACE = TokenSet.create(GetTextTokenTypes.WHITE_SPACE);
-  private static final TokenSet COMMENT = TokenSet.create(GetTextTokenTypes.COMMENT, GetTextTokenTypes.COMMENT_SYMBOLS);
+@ExtensionImpl
+public class GetTextParserDefinition implements ParserDefinition
+{
+	private static final TokenSet WHITE_SPACE = TokenSet.create(GetTextTokenTypes.WHITE_SPACE);
+	private static final TokenSet COMMENT = TokenSet.create(GetTextTokenTypes.COMMENT, GetTextTokenTypes.COMMENT_SYMBOLS);
 
-  @Nonnull
-  public Lexer createLexer(LanguageVersion languageVersion) {
-    return new _GetTextLexer();
-  }
+	@Nonnull
+	@Override
+	public Language getLanguage()
+	{
+		return GetTextLanguage.INSTANCE;
+	}
 
-  public PsiParser createParser(LanguageVersion languageVersion) {
-    return new GetTextParser();
-  }
+	@Nonnull
+	public Lexer createLexer(@Nonnull LanguageVersion languageVersion)
+	{
+		return new _GetTextLexer();
+	}
 
-  public IFileElementType getFileNodeType() {
-    return new IStubFileElementType(GetTextLanguage.INSTANCE);
-  }
+	@Nonnull
+	public PsiParser createParser(@Nonnull LanguageVersion languageVersion)
+	{
+		return new GetTextParser();
+	}
 
-  @Nonnull
-  public TokenSet getWhitespaceTokens(LanguageVersion languageVersion) {
-    return WHITE_SPACE;
-  }
+	@Nonnull
+	public IFileElementType getFileNodeType()
+	{
+		return new IStubFileElementType(GetTextLanguage.INSTANCE);
+	}
 
-  @Nonnull
-  public TokenSet getCommentTokens(LanguageVersion languageVersion) {
-    return COMMENT;
-  }
+	@Nonnull
+	public TokenSet getWhitespaceTokens(@Nonnull LanguageVersion languageVersion)
+	{
+		return WHITE_SPACE;
+	}
 
-  @Nonnull
-  public TokenSet getStringLiteralElements(LanguageVersion languageVersion) {
-    return GetTextTokenTypes.STRING_LITERALS;
-  }
+	@Nonnull
+	public TokenSet getCommentTokens(@Nonnull LanguageVersion languageVersion)
+	{
+		return COMMENT;
+	}
 
-  @Nonnull
-  public PsiElement createElement(ASTNode node) {
-    final IElementType type = node.getElementType();
-    if (type instanceof GetTextCompositeElementType) {
-      return GetTextCompositeElementType.createPsiElement(node);
-    }
-    throw new AssertionError("Unknown type: " + type);
-  }
+	@Nonnull
+	public TokenSet getStringLiteralElements(@Nonnull LanguageVersion languageVersion)
+	{
+		return GetTextTokenTypes.STRING_LITERALS;
+	}
 
-  public PsiFile createFile(FileViewProvider viewProvider) {
-    return new GetTextFile(viewProvider);
-  }
+	@Nonnull
+	public PsiElement createElement(ASTNode node)
+	{
+		final IElementType type = node.getElementType();
+		if(type instanceof GetTextCompositeElementType)
+		{
+			return GetTextCompositeElementType.createPsiElement(node);
+		}
+		throw new AssertionError("Unknown type: " + type);
+	}
 
-  public SpaceRequirements spaceExistanceTypeBetweenTokens(ASTNode left, ASTNode right) {
-    return SpaceRequirements.MAY;
-  }
+	@Nonnull
+	public PsiFile createFile(@Nonnull FileViewProvider viewProvider)
+	{
+		return new GetTextFile(viewProvider);
+	}
+
+	@Nonnull
+	public SpaceRequirements spaceExistanceTypeBetweenTokens(ASTNode left, ASTNode right)
+	{
+		return SpaceRequirements.MAY;
+	}
 }
 

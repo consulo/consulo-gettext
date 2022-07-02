@@ -3,6 +3,7 @@ package com.jetbrains.gettext.completion;
 import com.jetbrains.gettext.GetTextLanguage;
 import com.jetbrains.gettext.GetTextTokenTypes;
 import com.jetbrains.gettext.lang.GetTextFlags;
+import consulo.language.Language;
 import consulo.language.editor.completion.*;
 import consulo.language.editor.completion.lookup.LookupElementBuilder;
 import consulo.language.psi.PsiElement;
@@ -20,7 +21,6 @@ import static consulo.language.pattern.PlatformPatterns.psiElement;
  */
 public class GetTextCompletionContributor extends CompletionContributor
 {
-
 	private final static String[] KEYWORDS = {
 			"msgid",
 			"msgstr",
@@ -75,5 +75,12 @@ public class GetTextCompletionContributor extends CompletionContributor
 				result.stopHere();
 			}
 		}
+	}
+
+	@Nonnull
+	@Override
+	public Language getLanguage()
+	{
+		return GetTextLanguage.INSTANCE;
 	}
 }

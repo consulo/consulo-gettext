@@ -1,7 +1,6 @@
 package com.jetbrains.gettext;
 
 import consulo.language.ast.IElementType;
-import org.jetbrains.annotations.NonNls;
 
 import javax.annotation.Nonnull;
 
