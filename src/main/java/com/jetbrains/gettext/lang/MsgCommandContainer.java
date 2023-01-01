@@ -1,8 +1,8 @@
 package com.jetbrains.gettext.lang;
 
-import com.intellij.lang.PsiBuilder;
-import com.intellij.psi.tree.IElementType;
 import com.jetbrains.gettext.GetTextTokenTypes;
+import consulo.language.ast.IElementType;
+import consulo.language.parser.PsiBuilder;
 
 import java.util.HashMap;
 import java.util.Map;

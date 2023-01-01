@@ -1,19 +1,19 @@
 package com.jetbrains.gettext;
 
-import javax.annotation.Nonnull;
-
-import com.intellij.lang.ASTNode;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.impl.source.tree.CompositeElement;
-import com.intellij.psi.tree.ICompositeElementType;
-import com.intellij.psi.tree.IElementType;
+import consulo.language.ast.ASTNode;
+import consulo.language.ast.ICompositeElementType;
+import consulo.language.ast.IElementType;
+import consulo.language.impl.ast.CompositeElement;
+import consulo.language.psi.PsiElement;
 import org.jetbrains.annotations.NonNls;
+
+import javax.annotation.Nonnull;
 
 /**
  * @author Svetlana.Zemlyanskaya
  */
 public class GetTextCompositeElementType extends IElementType implements ICompositeElementType {
-  public GetTextCompositeElementType(@Nonnull @NonNls final String debugName) {
+  public GetTextCompositeElementType(@Nonnull final String debugName) {
     super(debugName, GetTextLanguage.INSTANCE);
   }
 

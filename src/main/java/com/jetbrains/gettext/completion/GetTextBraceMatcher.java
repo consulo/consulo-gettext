@@ -15,31 +15,47 @@
  */
 package com.jetbrains.gettext.completion;
 
-import com.intellij.lang.BracePair;
-import com.intellij.lang.PairedBraceMatcher;
-import com.intellij.psi.PsiFile;
-import com.intellij.psi.tree.IElementType;
+import com.jetbrains.gettext.GetTextLanguage;
 import com.jetbrains.gettext.GetTextTokenTypes;
+import consulo.annotation.component.ExtensionImpl;
+import consulo.language.BracePair;
+import consulo.language.Language;
+import consulo.language.PairedBraceMatcher;
+import consulo.language.ast.IElementType;
+import consulo.language.psi.PsiFile;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 /**
  * @author Svetlana.Zemlyanskaya
  */
-public class GetTextBraceMatcher implements PairedBraceMatcher {
-  private static final BracePair[] PAIRS = new BracePair[]{
-    new BracePair(GetTextTokenTypes.LBRACE, GetTextTokenTypes.RBRACE, false)
-  };
+@ExtensionImpl
+public class GetTextBraceMatcher implements PairedBraceMatcher
+{
+	private static final BracePair[] PAIRS = new BracePair[]{
+			new BracePair(GetTextTokenTypes.LBRACE, GetTextTokenTypes.RBRACE, false)
+	};
 
-  public BracePair[] getPairs() {
-    return PAIRS;
-  }
+	public BracePair[] getPairs()
+	{
+		return PAIRS;
+	}
 
-  public boolean isPairedBracesAllowedBeforeType(@Nonnull final IElementType lbraceType, @Nullable final IElementType tokenType) {
-    return true;
-  }
+	public boolean isPairedBracesAllowedBeforeType(@Nonnull final IElementType lbraceType, @Nullable final IElementType tokenType)
+	{
+		return true;
+	}
 
-  public int getCodeConstructStart(final PsiFile file, int openingBraceOffset) {
-    return openingBraceOffset;
-  }
+	public int getCodeConstructStart(final PsiFile file, int openingBraceOffset)
+	{
+		return openingBraceOffset;
+	}
+
+	@Nonnull
+	@Override
+	public Language getLanguage()
+	{
+		return GetTextLanguage.INSTANCE;
+	}
 }

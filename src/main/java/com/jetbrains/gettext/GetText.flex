@@ -1,7 +1,7 @@
 package com.jetbrains.gettext;
 
-import com.intellij.lexer.LexerBase;
-import com.intellij.psi.tree.IElementType;
+import consulo.language.lexer.LexerBase;
+import consulo.language.ast.IElementType;
 import com.jetbrains.gettext.GetTextTokenTypes;
 import com.jetbrains.gettext.GetTextElementType;
 

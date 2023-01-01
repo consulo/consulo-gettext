@@ -15,14 +15,30 @@
  */
 package com.jetbrains.gettext.completion;
 
-import com.intellij.codeInsight.editorActions.SimpleTokenSetQuoteHandler;
+import com.jetbrains.gettext.GetTextFileType;
 import com.jetbrains.gettext.GetTextTokenTypes;
+import consulo.annotation.component.ExtensionImpl;
+import consulo.language.editor.action.FileQuoteHandler;
+import consulo.language.editor.action.SimpleTokenSetQuoteHandler;
+import consulo.virtualFileSystem.fileType.FileType;
+
+import javax.annotation.Nonnull;
 
 /**
  * @author Svetlana.Zemlyanskaya
  */
-public class GetTextQuoteHandler  extends SimpleTokenSetQuoteHandler {
-  public GetTextQuoteHandler() {
-    super(GetTextTokenTypes.QUOTE);
-  }
+@ExtensionImpl
+public class GetTextQuoteHandler extends SimpleTokenSetQuoteHandler implements FileQuoteHandler
+{
+	public GetTextQuoteHandler()
+	{
+		super(GetTextTokenTypes.QUOTE);
+	}
+
+	@Nonnull
+	@Override
+	public FileType getFileType()
+	{
+		return GetTextFileType.INSTANCE;
+	}
 }

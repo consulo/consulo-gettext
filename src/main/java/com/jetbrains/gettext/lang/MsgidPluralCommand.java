@@ -1,7 +1,7 @@
 package com.jetbrains.gettext.lang;
 
-import com.intellij.psi.tree.IElementType;
 import com.jetbrains.gettext.GetTextCompositeElementTypes;
+import consulo.language.ast.IElementType;
 
 /**
  * @author Svetlana.Zemlyanskaya

@@ -1,6 +1,6 @@
 package com.jetbrains.gettext;
 
-import com.intellij.icons.AllIcons;
+import consulo.application.AllIcons;
 import consulo.ui.image.Image;
 
 /**

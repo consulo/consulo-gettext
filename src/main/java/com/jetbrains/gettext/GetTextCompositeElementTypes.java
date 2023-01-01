@@ -1,6 +1,6 @@
 package com.jetbrains.gettext;
 
-import com.intellij.psi.tree.IElementType;
+import consulo.language.ast.IElementType;
 
 /**
  * @author Svetlana.Zemlyanskaya
