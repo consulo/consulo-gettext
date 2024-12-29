@@ -22,7 +22,7 @@ import consulo.language.editor.action.FileQuoteHandler;
 import consulo.language.editor.action.SimpleTokenSetQuoteHandler;
 import consulo.virtualFileSystem.fileType.FileType;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 
 /**
  * @author Svetlana.Zemlyanskaya

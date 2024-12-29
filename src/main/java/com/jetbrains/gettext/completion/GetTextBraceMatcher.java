@@ -24,8 +24,8 @@ import consulo.language.PairedBraceMatcher;
 import consulo.language.ast.IElementType;
 import consulo.language.psi.PsiFile;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
 
 /**
  * @author Svetlana.Zemlyanskaya
